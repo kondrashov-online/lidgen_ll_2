@@ -37,7 +37,6 @@ const HomePage = () => {
       <NoIndexTags />
       
       <Header />
-      <Breadcrumbs />
       <main>
         <HeroSection />
         <ActivitiesSection />
