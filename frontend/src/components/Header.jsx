@@ -160,7 +160,9 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center text-white">
               <Phone className="h-4 w-4 mr-1" />
-              <span className="font-medium">{siteInfo.phone}</span>
+              <span className="font-medium">
+                {loading ? <LoadingSpinner size="sm" /> : displayPhone}
+              </span>
             </div>
             <Button 
               className="bg-white text-orange-500 hover:bg-orange-50 font-medium px-6"
