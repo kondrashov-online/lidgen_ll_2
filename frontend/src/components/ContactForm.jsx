@@ -13,12 +13,14 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     message: '',
     agreement: false
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+  const { mutate, loading } = useMutation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
