@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Необходимо протестировать backend API для сайта альпака-фермы ЛуЛу. Проверить публичные endpoints, auth endpoints, admin endpoints, корректность JSON ответов, HTTP статус коды, обработку ошибок, работу с MongoDB."
+user_problem_statement: "Необходимо провести полное тестирование frontend сайта альпака-фермы ЛуЛу на http://localhost:3000. Проверить загрузку и отображение данных, навигацию и интерфейс, формы и взаимодействие, UI компоненты, производительность."
 
 backend:
   - task: "Public API Endpoints Testing"
