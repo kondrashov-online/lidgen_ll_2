@@ -166,7 +166,65 @@ backend:
           comment: "MongoDB integration working correctly: Database connection established (✅), CRUD operations working (✅), Data persistence verified through API responses (✅). Services, reviews, news, gallery, blog posts, and bookings all retrieving data successfully."
 
 frontend:
-  # Frontend testing not performed as per instructions
+  - task: "Main Page Loading and Data Display"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Need to test main page loading, site info from API, services display, reviews loading, news display, and gallery images loading"
+
+  - task: "Navigation and Interface"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Header.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Need to test dropdown menus (Services and Blog), navigation links clickability, responsive design on different screen sizes"
+
+  - task: "Contact Form Functionality"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/ContactForm.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Need to test form field filling, validation (required fields), API submission, success message display, form reset after submission"
+
+  - task: "UI Components and Interactions"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/PhotoGallery.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Need to test buttons and hover effects, gallery image modal opening, loading spinners, toast notifications"
+
+  - task: "Performance and Console Errors"
+    implemented: true
+    working: "NA"
+    file: "frontend/src"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Need to test loading times, check for console errors, verify API integration performance"
 
 metadata:
   created_by: "testing_agent"
