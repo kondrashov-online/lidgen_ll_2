@@ -75,7 +75,7 @@ function App() {
           <Route path="/services/feed-animals" element={<PlaceholderPage title="Покормить животных" />} />
           <Route path="/services/pet-animals" element={<PlaceholderPage title="Погладить животных" />} />
           <Route path="/services/horse-care" element={<PlaceholderPage title="Покормить и погладить лошадку" />} />
-          <Route path="/services/play-dogs" element={<Placeholder title="Поиграть с собачками" />} />
+          <Route path="/services/play-dogs" element={<PlaceholderPage title="Поиграть с собачками" />} />
           <Route path="/services/restaurant" element={<PlaceholderPage title="Ресторан Сысерть" />} />
           
           {/* Blog routes */}
