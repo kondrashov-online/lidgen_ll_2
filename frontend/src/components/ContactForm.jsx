@@ -217,9 +217,17 @@ const ContactForm = () => {
                 <Button 
                   type="submit"
                   size="lg"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                  disabled={loading}
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold disabled:opacity-50"
                 >
-                  Отправить
+                  {loading ? (
+                    <div className="flex items-center justify-center">
+                      <LoadingSpinner size="sm" />
+                      <span className="ml-2">Отправляем...</span>
+                    </div>
+                  ) : (
+                    "Отправить"
+                  )}
                 </Button>
               </form>
             </div>
