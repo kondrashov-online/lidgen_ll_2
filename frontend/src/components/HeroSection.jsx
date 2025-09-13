@@ -106,7 +106,6 @@ const HeroSection = () => {
                   Забронировать
                 </Button>
               </div>
-            </div>
           </>
         )}
           </div>
