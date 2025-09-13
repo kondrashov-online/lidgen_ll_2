@@ -2,7 +2,44 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Phone } from 'lucide-react';
 import { Button } from './ui/button';
-import { navigationMenu, siteInfo } from '../data/mock';
+import { useApi } from '../hooks/useApi';
+import { siteInfoAPI } from '../services/api';
+import LoadingSpinner from './LoadingSpinner';
+
+// Static navigation menu (can be made dynamic later)
+const navigationMenu = [
+  { id: 1, title: "Взаимодействуй", path: "/interact", isDropdown: false },
+  { id: 2, title: "Пробуй", path: "/try", isDropdown: false },
+  { id: 3, title: "Двигайся", path: "/move", isDropdown: false },
+  { id: 4, title: "Цены", path: "/prices", isDropdown: false },
+  { id: 5, title: "О ферме", path: "/about", isDropdown: false },
+  { id: 6, title: "Контакты", path: "/contacts", isDropdown: false },
+  { 
+    id: 7, 
+    title: "Услуги", 
+    path: "/services", 
+    isDropdown: true,
+    dropdownItems: [
+      { title: "Контактный зоопарк", path: "/services/contact-zoo" },
+      { title: "Зоопарк Екатеринбург", path: "/services/zoo-ekaterinburg" },
+      { title: "Покормить животных", path: "/services/feed-animals" },
+      { title: "Погладить животных", path: "/services/pet-animals" },
+      { title: "Покормить и погладить лошадку", path: "/services/horse-care" },
+      { title: "Поиграть с собачками", path: "/services/play-dogs" },
+      { title: "Ресторан Сысерть", path: "/services/restaurant" }
+    ]
+  },
+  { 
+    id: 8, 
+    title: "Блог", 
+    path: "/blog", 
+    isDropdown: true,
+    dropdownItems: [
+      { title: "Куда сводить ребенка в Екатеринбурге", path: "/blog/kids-ekaterinburg" },
+      { title: "Куда съездить с ребенком в Свердловской области", path: "/blog/kids-sverdlovsk" }
+    ]
+  }
+];
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
