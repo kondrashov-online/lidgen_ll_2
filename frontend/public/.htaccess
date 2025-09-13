@@ -1,0 +1,27 @@
+# Блокировка индексации через HTTP заголовки
+
+# Добавляем заголовки для запрета индексации
+<IfModule mod_headers.c>
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+</IfModule>
+
+# Дополнительная защита для robots.txt
+<Files "robots.txt">
+    Header always set Cache-Control "public, max-age=3600"
+</Files>
+
+# Запрет доступа к системным файлам
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files ".env">
+    Order allow,deny  
+    Deny from all
+</Files>
+
+# Принудительное HTTPS (если используется)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
