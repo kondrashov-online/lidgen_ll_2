@@ -98,18 +98,18 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="pt-4">
-                <Button 
-                  size="lg" 
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Забронировать
-                </Button>
-              </div>
+                    <div className="pt-4">
+                      <Button 
+                        size="lg" 
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        Забронировать
+                      </Button>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
-          </>
-        )}
-        </div>
         </div>
       </div>
     </section>
