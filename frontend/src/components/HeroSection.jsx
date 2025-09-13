@@ -85,29 +85,30 @@ const HeroSection = () => {
                     <p className="text-lg text-orange-600 font-semibold">
                       {displayInfo.description}
                     </p>
-                
-                <div className="bg-white bg-opacity-70 p-6 rounded-lg shadow-md">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                    Проведите у нас целый день
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed">
-                    У нас много чем можно заняться: ты потрогаешь животных, погуляешь, 
-                    пофоткаешься, потом вкусно поешь, классно пообщаешься, и вообще это 
-                    будут лучшие выходные!
-                  </p>
-                </div>
-              </div>
+                    
+                    <div className="bg-white bg-opacity-70 p-6 rounded-lg shadow-md">
+                      <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                        Проведите у нас целый день
+                      </h2>
+                      <p className="text-gray-700 leading-relaxed">
+                        У нас много чем можно заняться: ты потрогаешь животных, погуляешь, 
+                        пофоткаешься, потом вкусно поешь, классно пообщаешься, и вообще это 
+                        будут лучшие выходные!
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="pt-4">
-                <Button 
-                  size="lg" 
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Забронировать
-                </Button>
-              </div>
-          </>
-        )}
+                  <div className="pt-4">
+                    <Button 
+                      size="lg" 
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      Забронировать
+                    </Button>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
