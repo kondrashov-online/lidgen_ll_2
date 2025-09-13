@@ -67,17 +67,24 @@ const HeroSection = () => {
 
             {/* Main Title */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
-                {siteInfo.name}
-                <br />
-                <span className="text-orange-500">{siteInfo.location}</span>
-              </h1>
-              <p className="text-xl text-gray-600 font-medium">{siteInfo.distance}</p>
-              
-              <div className="space-y-3">
-                <p className="text-lg text-orange-600 font-semibold">
-                  {siteInfo.description}
-                </p>
+              {loading ? (
+                <div className="space-y-4">
+                  <LoadingSpinner size="lg" />
+                  <p className="text-gray-600">Загружаем информацию о ферме...</p>
+                </div>
+              ) : (
+                <>
+                  <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+                    {displayInfo.name}
+                    <br />
+                    <span className="text-orange-500">{displayInfo.location}</span>
+                  </h1>
+                  <p className="text-xl text-gray-600 font-medium">{displayInfo.distance}</p>
+                  
+                  <div className="space-y-3">
+                    <p className="text-lg text-orange-600 font-semibold">
+                      {displayInfo.description}
+                    </p>
                 
                 <div className="bg-white bg-opacity-70 p-6 rounded-lg shadow-md">
                   <h2 className="text-2xl font-bold text-gray-800 mb-4">
