@@ -28,13 +28,6 @@ import Breadcrumbs from "./components/SEO/Breadcrumbs";
 import { useApi } from "./hooks/useApi";
 import { siteInfoAPI, reviewsAPI } from "./services/api";
 
-// Import SEO components
-import { MetaTags } from "./components/SEO/MetaTags";
-import { LocalBusinessSchema, OrganizationSchema, FAQSchema } from "./components/SEO/StructuredData";
-import Breadcrumbs from "./components/SEO/Breadcrumbs";
-import { useApi } from "./hooks/useApi";
-import { siteInfoAPI, reviewsAPI } from "./services/api";
-
 const HomePage = () => {
   const { data: siteInfo } = useApi(() => siteInfoAPI.getSiteInfo());
   const { data: reviews } = useApi(() => reviewsAPI.getReviews(5));
