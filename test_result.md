@@ -246,3 +246,5 @@ test_plan:
 agent_communication:
     - agent: "testing"
       message: "Backend API testing completed successfully. All 16 tests passed with 100% success rate. Tested all public endpoints, authentication, admin endpoints, error handling, and MongoDB integration. The Alpaca Farm LL backend API is fully functional and ready for production use. No critical issues found."
+    - agent: "testing"
+      message: "Starting comprehensive frontend testing for Alpaca Farm LL website. Will test all major functionality including data loading, navigation, forms, UI components, and performance. Testing will be conducted on the production URL as specified in .env file."
