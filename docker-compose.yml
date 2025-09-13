@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:5.0
+    container_name: alpaca_mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: alpaca_farm_db
+    volumes:
+      - mongodb_data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - "27017:27017"
+    networks:
+      - alpaca_network
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ismaster')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: alpaca_backend
+    restart: always
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017
+      - DB_NAME=alpaca_farm_db
+      - SECRET_KEY=alpaca-farm-secret-key-production-2025
+      - CORS_ORIGINS=https://парк-альпака.рф,https://www.парк-альпака.рф,http://localhost:3000
+    ports:
+      - "8001:8001"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - alpaca_network
+    volumes:
+      - ./backend/uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/api/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_BACKEND_URL=https://парк-альпака.рф
+    container_name: alpaca_frontend
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - alpaca_network
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  alpaca_network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
