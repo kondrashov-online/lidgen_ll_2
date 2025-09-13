@@ -88,10 +88,11 @@ function App() {
           {/* Admin routes (will be implemented later) */}
           <Route path="/admin" element={<PlaceholderPage title="Панель администратора" />} />
           <Route path="/admin/login" element={<PlaceholderPage title="Вход в админ-панель" />} />
-        </Routes>
-        <Toaster />
-      </BrowserRouter>
-    </div>
+          </Routes>
+          <Toaster />
+        </BrowserRouter>
+      </div>
+    </AuthProvider>
   );
 }
 
