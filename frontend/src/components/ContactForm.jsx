@@ -22,7 +22,7 @@ const ContactForm = () => {
   const { toast } = useToast();
   const { mutate, loading } = useMutation();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.name || !formData.phone) {
@@ -43,23 +43,47 @@ const ContactForm = () => {
       return;
     }
 
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Заявка отправлена!",
-      description: "Наш менеджер свяжется с вами в ближайшее время"
-    });
+    try {
+      await mutate(
+        () => bookingAPI.createBooking({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || null,
+          message: formData.message || null
+        }),
+        (response) => {
+          // Success callback
+          setIsSubmitted(true);
+          toast({
+            title: "Заявка отправлена!",
+            description: response.message || "Наш менеджер свяжется с вами в ближайшее время"
+          });
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        phone: '',
-        message: '',
-        agreement: false
-      });
-    }, 3000);
+          // Reset form after 3 seconds
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormData({
+              name: '',
+              phone: '',
+              email: '',
+              message: '',
+              agreement: false
+            });
+          }, 3000);
+        },
+        (error) => {
+          // Error callback
+          toast({
+            title: "Ошибка отправки",
+            description: error || "Произошла ошибка при отправке заявки. Попробуйте позже.",
+            variant: "destructive"
+          });
+        }
+      );
+    } catch (error) {
+      // Additional error handling
+      console.error('Booking submission error:', error);
+    }
   };
 
   const handleChange = (e) => {
