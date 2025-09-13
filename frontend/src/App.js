@@ -59,9 +59,10 @@ const PlaceholderPage = ({ title }) => (
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
+    <AuthProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/interact" element={<PlaceholderPage title="Взаимодействуй с животными" />} />
           <Route path="/try" element={<PlaceholderPage title="Пробуй новое" />} />
