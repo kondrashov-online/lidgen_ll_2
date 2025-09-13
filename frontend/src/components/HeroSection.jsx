@@ -107,8 +107,8 @@ const HeroSection = () => {
                 </Button>
               </div>
             </div>
-                </>
-              )}
+          </>
+        )}
             </div>
         </div>
       </div>
