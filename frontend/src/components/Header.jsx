@@ -43,10 +43,14 @@ const navigationMenu = [
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { data: siteInfo, loading } = useApi(() => siteInfoAPI.getSiteInfo());
 
   const handleDropdownToggle = (menuId) => {
     setActiveDropdown(activeDropdown === menuId ? null : menuId);
   };
+
+  // Use default values while loading
+  const displayPhone = siteInfo?.phone || "+7 (343) 379-42-98";
 
   return (
     <header className="bg-gradient-to-r from-orange-400 to-orange-500 shadow-md sticky top-0 z-50">
