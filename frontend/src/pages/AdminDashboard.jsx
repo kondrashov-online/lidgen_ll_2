@@ -12,6 +12,7 @@ import { useApi } from '../hooks/useApi';
 import { adminAPI, bookingAPI, reviewsAPI } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
+import NoIndexTags from '../components/SEO/NoIndexTags';
 
 const AdminDashboard = () => {
   const { user, logout, isAuthenticated } = useAuth();
