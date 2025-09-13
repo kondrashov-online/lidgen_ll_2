@@ -1,7 +1,9 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import { Button } from './ui/button';
-import { siteInfo } from '../data/mock';
+import { useApi } from '../hooks/useApi';
+import { siteInfoAPI } from '../services/api';
+import LoadingSpinner from './LoadingSpinner';
 
 const HeroSection = () => {
   return (
