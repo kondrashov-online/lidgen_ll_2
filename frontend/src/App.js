@@ -91,9 +91,18 @@ function App() {
           <Route path="/blog/kids-ekaterinburg" element={<PlaceholderPage title="Куда сводить ребенка в Екатеринбурге" />} />
           <Route path="/blog/kids-sverdlovsk" element={<PlaceholderPage title="Куда съездить с ребенком в Свердловской области" />} />
           
-          {/* Admin routes (will be implemented later) */}
-          <Route path="/admin" element={<PlaceholderPage title="Панель администратора" />} />
-          <Route path="/admin/login" element={<PlaceholderPage title="Вход в админ-панель" />} />
+          {/* Admin routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="bookings" element={<AdminBookings />} />
+            <Route path="reviews" element={<PlaceholderPage title="Управление отзывами" />} />
+            <Route path="services" element={<PlaceholderPage title="Управление услугами" />} />
+            <Route path="blog" element={<PlaceholderPage title="Управление блогом" />} />
+            <Route path="news" element={<PlaceholderPage title="Управление новостями" />} />
+            <Route path="gallery" element={<PlaceholderPage title="Управление галереей" />} />
+            <Route index element={<AdminDashboard />} />
+          </Route>
           </Routes>
           <Toaster />
         </BrowserRouter>
