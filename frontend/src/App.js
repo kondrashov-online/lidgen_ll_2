@@ -21,9 +21,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminBookings from "./pages/AdminBookings";
 
-// Import SEO components
-import { MetaTags } from "./components/SEO/MetaTags";
-import { LocalBusinessSchema, OrganizationSchema, FAQSchema } from "./components/SEO/StructuredData";
+// Import SEO components  
+import NoIndexTags from "./components/SEO/NoIndexTags";
 import Breadcrumbs from "./components/SEO/Breadcrumbs";
 import { useApi } from "./hooks/useApi";
 import { siteInfoAPI, reviewsAPI } from "./services/api";
