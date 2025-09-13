@@ -15,6 +15,12 @@ import NewsSection from "./components/NewsSection";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
+// Import admin components
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminBookings from "./pages/AdminBookings";
+
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-white">
