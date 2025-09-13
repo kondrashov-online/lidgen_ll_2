@@ -21,10 +21,29 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminBookings from "./pages/AdminBookings";
 
+// Import SEO components
+import { MetaTags } from "./components/SEO/MetaTags";
+import { LocalBusinessSchema, OrganizationSchema, FAQSchema } from "./components/SEO/StructuredData";
+import Breadcrumbs from "./components/SEO/Breadcrumbs";
+import { useApi } from "./hooks/useApi";
+import { siteInfoAPI, reviewsAPI } from "./services/api";
+
 const HomePage = () => {
+  const { data: siteInfo } = useApi(() => siteInfoAPI.getSiteInfo());
+  const { data: reviews } = useApi(() => reviewsAPI.getReviews(5));
+
   return (
     <div className="min-h-screen bg-white">
+      {/* SEO Meta Tags */}
+      <MetaTags />
+      
+      {/* Structured Data */}
+      <LocalBusinessSchema siteInfo={siteInfo} />
+      <OrganizationSchema siteInfo={siteInfo} />
+      <FAQSchema />
+      
       <Header />
+      <Breadcrumbs />
       <main>
         <HeroSection />
         <ActivitiesSection />
