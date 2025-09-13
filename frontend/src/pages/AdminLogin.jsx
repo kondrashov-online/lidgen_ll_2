@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Lock, User, AlertCircle } from 'lucide-react';
+import NoIndexTags from '../components/SEO/NoIndexTags';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Card } from '../components/ui/card';
