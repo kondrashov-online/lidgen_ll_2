@@ -6,6 +6,16 @@ import { siteInfoAPI } from '../services/api';
 import LoadingSpinner from './LoadingSpinner';
 
 const HeroSection = () => {
+  const { data: siteInfo, loading } = useApi(() => siteInfoAPI.getSiteInfo());
+
+  // Default values while loading
+  const displayInfo = siteInfo || {
+    name: "Ферма ЛуЛу",
+    location: "в Космакова",
+    distance: "всего 30 км от Екатеринбурга",
+    description: "Полезное семейное развлечение на свежем воздухе и в любую погоду"
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-yellow-100 via-orange-50 to-yellow-50 overflow-hidden">
       {/* Geometric Pattern Background */}
