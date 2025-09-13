@@ -166,6 +166,24 @@ const ContactForm = () => {
                 </div>
 
                 <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email (необязательно)
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      className="w-full pl-10"
+                    />
+                  </div>
+                </div>
+
+                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Сообщение
                   </label>
