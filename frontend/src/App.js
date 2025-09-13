@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/toaster";
+import { AuthProvider } from "./context/AuthContext";
 
 // Import all components
 import Header from "./components/Header";
