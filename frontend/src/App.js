@@ -34,13 +34,8 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* SEO Meta Tags */}
-      <MetaTags />
-      
-      {/* Structured Data */}
-      <LocalBusinessSchema siteInfo={siteInfo} />
-      <OrganizationSchema siteInfo={siteInfo} />
-      <FAQSchema />
+      {/* Блокировка индексации */}
+      <NoIndexTags />
       
       <Header />
       <Breadcrumbs />
