@@ -17,7 +17,9 @@ export const MetaTags = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Ферма ЛуЛу" />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+      <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
+      <meta name="yandex" content="noindex, nofollow, noarchive, nosnippet" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="canonical" href={url} />
 
