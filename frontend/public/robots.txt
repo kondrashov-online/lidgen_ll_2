@@ -1,0 +1,120 @@
+# Robots.txt - Блокировка индексации сайта
+# Сайт закрыт от индексации поисковыми системами
+
+User-agent: *
+Disallow: /
+
+# Блокировка всех основных поисковых систем
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: YandexAccessibilityBot
+Disallow: /
+
+User-agent: YandexMobileBot
+Disallow: /
+
+User-agent: YandexDirectDyn
+Disallow: /
+
+User-agent: YandexScreenshotBot
+Disallow: /
+
+User-agent: YandexImages
+Disallow: /
+
+User-agent: YandexVideo
+Disallow: /
+
+User-agent: YandexVideoParser
+Disallow: /
+
+User-agent: YandexMedia
+Disallow: /
+
+User-agent: YandexBlogs
+Disallow: /
+
+User-agent: YandexFavicons
+Disallow: /
+
+User-agent: YandexWebmaster
+Disallow: /
+
+User-agent: YandexPagechecker
+Disallow: /
+
+User-agent: YandexImageResizer
+Disallow: /
+
+User-agent: YandexAdNet
+Disallow: /
+
+User-agent: YandexDirect
+Disallow: /
+
+User-agent: YandexCalendar
+Disallow: /
+
+User-agent: YandexSitelinks
+Disallow: /
+
+User-agent: YandexMetrika
+Disallow: /
+
+User-agent: YandexNews
+Disallow: /
+
+User-agent: YandexNewslinks
+Disallow: /
+
+User-agent: YandexCatalog
+Disallow: /
+
+User-agent: YandexAntivirus
+Disallow: /
+
+User-agent: YandexVertis
+Disallow: /
+
+User-agent: YandexForDomain
+Disallow: /
+
+User-agent: YandexSpravBot
+Disallow: /
+
+User-agent: YandexSearchShop
+Disallow: /
+
+User-agent: YandexMedianaBot
+Disallow: /
+
+User-agent: YandexOntoDB
+Disallow: /
+
+User-agent: YandexOntoDBAPI
+Disallow: /
+
+User-agent: YandexTurbo
+Disallow: /
+
+User-agent: YandexVerticals
+Disallow: /
